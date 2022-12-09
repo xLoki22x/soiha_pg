@@ -6,6 +6,7 @@ import imgback2 from '../assets/123.png'
 import imgback3 from '../assets/hpwa2.png'
 import imgback4 from '../assets/plate.png'
 import { Card, Progress } from '@material-tailwind/react';
+
 const tagging = () => {
 
     const sncode = localStorage.getItem('sncode');
@@ -50,7 +51,6 @@ const tagging = () => {
                         <p className=' text-3xl text-lime-400'>ซ่อม</p>
                     </div>
                 </div>
-
 
                 <div className='ml-20 mr-20 bg-white text-slate-800 flex rounded-b-3xl h-[150px]  border-t-2'>
                     <div className='flex-col'>
