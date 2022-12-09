@@ -51,6 +51,7 @@ const tagging = () => {
                     </div>
                 </div>
 
+
                 <div className='ml-20 mr-20 bg-white text-slate-800 flex rounded-b-3xl h-[150px]  border-t-2'>
                     <div className='flex-col'>
                         <div className='ml-10 mt-3 text-left'>
