@@ -5,7 +5,6 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  useRoutes
 } from "react-router-dom";
 import Home from '../src/pages/Home'
 import { Outlet, Link } from "react-router-dom";
@@ -13,9 +12,11 @@ import 'animate.css';
 import Navbarr from './sharing/navbar'
 
 function App() {
+
+
   return (
     <div className="App">
-      <Navbarr></Navbarr>
+<Navbarr></Navbarr>
     </div>
   )
 }

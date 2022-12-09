@@ -3,8 +3,6 @@ import { Outlet, Link,  Routes,Route,useNavigate,Navigate   } from "react-router
 import 'animate.css';
 import '../App.css'
 import Swal from 'sweetalert2'
-import '../css/home.css'
-import TextField from '@mui/material/TextField';
 
 
 const Home =() =>{
@@ -47,15 +45,15 @@ const Home =() =>{
 
 
     return (
-                    <div className="App w-full h-full  flex m-0 place-items-center min-w-[320px]  justify-center  min-h-screen" >
+                    <div className="App w-full h-full " >
                         <div className='animate__animated animate__bounce '>
-                            <h1 className='text-black'> Soiha Warranty </h1>
+                            <h1> Soiha Warranty </h1>
                             <div>
-                                <input style={{ textTransform: "uppercase" }} className='rounded-full ml-20 focus:outline-none bg-white text-black shadow-xl mt-5 w-96 h-12 text-center' placeholder='Enter Code Warranty' value={sncode} onChange={getsncode} type={'text'}  ></input>
+                                <input className='rounded-full ml-20 focus:outline-none mt-5 w-96 h-12 text-center hover:shadow-lg' placeholder='Enter Code Warranty' value={sncode} onChange={getsncode} type={'text'}  ></input>
                                 <button type='submit' className='bg-violet-700 text-slate-100 hover:bg-slate-100 hover:text-violet-700 ml-3 btn btn-primary' onClick={handleClick}>submit</button>
                                 {/* <Link to={`Dashboard/${sncode}`} ><button type='submit' className='bg-violet-700 text-slate-100 hover:bg-slate-100 hover:text-violet-700 ml-3 btn btn-primary'>submit</button></Link> */}
                             </div>
-                            <Link to='register'> <p className=' text-slate-400 mt-3 underline hover:text-black  '  > set guarantee</p></Link>
+                            <Link to='/register'> <p className=' text-slate-400 mt-3 underline hover:text-lime-50  '  > set guarantee</p></Link>
                         </div>
                         <Outlet />
                     </div>

@@ -1,181 +1,73 @@
+import React, { Component } from 'react'
+import { Outlet, Link, NavLink } from "react-router-dom";
+export class register extends Component {
+    render() {
+        return (
 
-import React, { Component, useState, useEffect ,ChangeEvent } from 'react'
-import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import {
-    Navbar,
-    MobileNav,
-    Typography,
-    IconButton,
-} from "@material-tailwind/react";
-import { BrowserRouter as Router, Route, useParams, useLocation, useNavigate, NavLink, Link, Form } from 'react-router-dom';
-import Swal from 'sweetalert2'
+            <div className="w-full">
+                <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 text-left" >
+                    <h3 className='text-gray-700 text-center ' >Register Warranty</h3>
 
+                    <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+                            Username
+                        </label>
+                        <input className="shadow  appearance-none border rounded w-96 py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" />
+                    </div>
 
-export default function register() {
+                    <div className="mb-2">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" >
+                            Code Product
+                        </label>
+                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline" placeholder="123456789" />
+                    </div>
 
-    const [sncode, setSNcode] = useState('');
-    const navigate = useNavigate();
+                    <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" >
+                            Address
+                        </label>
+                        <textarea className="block  text-white  w-full h-20 text-sm font-bold mb-2" />
+                    </div>
 
+                    <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" >
+                            Phone
+                        </label>
+                        <input className="shadow appearance-none border rounded w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline" placeholder="xxx-xxx-xxxx" />
+                    </div>
 
-    const [formValues, setFormValues] = useState({
-        name:{
-          value:'',
-          error:false,
-          errorMessage:'You must enter a name'
-        },
-        age:{
-          value:21,
-          error:false,
-          errorMessage:'You must enter an age'
-        },
-        likes:{
-          value:'',
-          error:false,
-          errorMessage:'You must enter your liked tech stacks'
-        },
-        jobTitle:{
-          value:'full-stack',
-          error:false,
-          errorMessage:'You must choose your job title'
-        }
-      })
+                    <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" >
+                            Date Buy
+                        </label>
+                        <input type={'date'} className="shadow appearance-none border rounded w-full py-2 px-3 text-white mb-3 leading-tight focus:outline-none focus:shadow-outline" />
+                    </div>
 
-
-
-
-
-
-
-const  gotohome =()=>{
-
-    Swal.fire({
-        icon: 'warning',
-        title: 'Are you sure Register Warranty ',
-        confirmButtonText: 'Yes ',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-      }).then((res) => { if(res.isConfirmed){navigate(`/Dashboard/${sncode}`)}});
+                    <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" >
+                            File Slip
+                        </label>
+                        <input type={'file'} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" />
+                    </div>
 
 
+                    <div className="flex items-center justify-start">
+
+                        <NavLink to={`Dashboard/${1}`}> <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                            OK
+                        </button></NavLink>
+
+                        <Link to='/'> <button className="bg-red-700 hover:bg-blue-700 ml-3 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit"  >
+                            Back
+                        </button></Link>
+                    </div>
+                </form>
+
+            </div>
+
+
+        )
+    }
 }
 
-    return (
-        <div className=''>
-            <div className='p-10  bg-white shadow-xl  w-[1000px]  rounded-lg 'style={{ margin: '0px auto' }}>
-                <div className='w-[900px]  text-black' style={{ margin: '0 auto' }}>
-
-                    <Typography variant="h6" gutterBottom className='mt-5  mb-5 text-[30px] font-bold'>
-                        Register Warranty
-                    </Typography>
-                    <Grid container spacing={3}>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                required
-                                id="firstName"
-                                name="firstName"
-                                label="First name"
-                                fullWidth
-                                autoComplete="given-name"
-                                variant="standard"
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                required
-                                id="lastName"
-                                name="lastName"
-                                label="Last name"
-                                fullWidth
-                                autoComplete="family-name"
-                                variant="standard"
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                required
-                                id="address1"
-                                name="address1"
-                                label="SNcode"
-                                fullWidth
-                                autoComplete="shipping address-line1"
-                                variant="standard"
-                                onChange={(e) => { setSNcode(e.target.value) }} 
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                id="address2"
-                                name="address2"
-                                label="address"
-                                fullWidth
-                                autoComplete="shipping address-line2"
-                                variant="standard"
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                required
-                                id="city"
-                                name="city"
-                                label="City"
-                                fullWidth
-                                autoComplete="shipping address-level2"
-                                variant="standard"
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                id="state"
-                                name="state"
-                                label="State/Province/Region"
-                                fullWidth
-                                variant="standard"
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                required
-                                id="zip"
-                                name="zip"
-                                label="Zip / Postal code"
-                                fullWidth
-                                autoComplete="shipping postal-code"
-                                variant="standard"
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                required
-                                id="country"
-                                name="country"
-                                label="Country"
-                                fullWidth
-                                autoComplete="shipping country"
-                                variant="standard"
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                           
-                        </Grid>
-                    </Grid>
-                   
-                </div>
-
-                <div className="flex items-center justify-center">
-
-                     <button onClick={ ()=>{gotohome()} } className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                        OK
-                    </button>
-
-                    <Link to='/'> <button className="bg-red-700 hover:bg-red-800 ml-3 no-underline text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit"  >
-                        Back
-                    </button></Link>
-                </div>
-            </div>
-            </div>
-    )
-}
+export default register
