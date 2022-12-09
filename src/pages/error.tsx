@@ -2,7 +2,7 @@
 import React from 'react';
 import '../../src/css/error.css'
 const NotFound = () =>
-    <div>
+    <body className=' bg-white'>
         <div className="main">
             <svg xmlns="http://www.w3.org/2000/svg" xlinkHref="http://www.w3.org/1999/xlink" width="470" height="290" viewBox="0 0 470 290">
                 <defs>
@@ -49,6 +49,10 @@ const NotFound = () =>
 
 
         </div>
-    </div>
+            <div>
+                <h1 className=' text-black'>404 Error</h1>
+                <p className=' fo text-black'>pages Error</p>
+            </div>
+    </body>
 
 export default NotFound;
