@@ -9,6 +9,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
+import Swal from 'sweetalert2'
 import { styled } from '@mui/material/styles';
 import { purple } from '@mui/material/colors';
 import Button, { ButtonProps } from '@mui/material/Button';
@@ -57,6 +58,25 @@ const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
     backgroundColor: purple[700],
   },
 }));
+ 
+
+const submit = () =>{
+
+    Swal.fire({
+      icon: 'warning',
+      title: 'Warning',
+      text: 'Are you sure you want to continue?',
+      showCancelButton: true,
+      confirmButtonColor: 'green',
+      cancelButtonColor: 'red',
+      confirmButtonText: 'i am sure',
+      cancelButtonText: 'cancel'
+    })
+
+}
+
+
+
 
 const report = () => {
   const [age, setAge] = React.useState('');
@@ -65,14 +85,14 @@ const report = () => {
     setAge(event.target.value as string);
   };
   return (
-    <div>
+    <div  className='font-display'>
       <Navbarr></Navbarr>
 
-      <div className='mt-5 ml-20 mr-20 mb-20'>
+      <div className='mt-5 ml-20 mr-20 mb-20 '>
         <h1 className='text-left text-black'> Report</h1>
 
-        <div className='flex justify-between'>
-          <Card className='mt-5 w-[650px] h-full '>
+        <div className='flex lg:justify-around sm:flex sm:flex-col lg:flex-row'>
+          <Card className='mt-5 lg:w-[650px] h-full  sm:w-auto shadow-2xl'>
 
             <div className='m-5 '>
               <label className=' font-bold text-3xl text-black'>Address Details</label>
@@ -143,8 +163,8 @@ const report = () => {
                     id="demo-simple-select"
                     value={age}
                     label="Age"
-                    onChange={handleChange}
-                  >
+                    onChange={handleChange}>
+                      
                     <MenuItem value="">
                       <em>None</em>
                     </MenuItem>
@@ -161,16 +181,17 @@ const report = () => {
           </Card>
 
 
-          <Card className='mt-5 w-[450px] text-black '>
+          <Card className='mt-5 lg:w-[450px] sm:w-auto text-black shadow-2xl'>
             <div className='m-5 '>
               <label className=' font-bold text-3xl'>Your Order</label>
 
-              <div className='flex mt-2 justify-between w-[300px] '>
-                <p className=' text-red-500 ml-3 mr-3'>Technical</p>
+              <div className='flex mt-2 justify-between w-full lg:w-[300px] sm:w-[400px] '>
+                <h3 className=' text-red-500 ml-3 mr-3 text-[15px] ' style={{fontWeight:'bold'}}>Technical</h3>
                 <div className='w-[250px] text-left'>
                 <p>มีอาการ เสียที่หม้อแปลง และฝาครอบไหม้เลยจำเป็นต้องเปลื่ยน</p>
                 </div>
               </div>
+              
               <div className='mt-2'>
                 <table className='w-[300px] text-center ' style={{ margin: '0 auto', fontSize: 15 }}>
                   <thead className='border-b-2  border-slate-700'>
@@ -217,7 +238,7 @@ const report = () => {
             </div>
 
               <div className='w-[300px] ' style={{ margin: '20px auto' }}>
-                  <ColorButton className='w-[250px] h-[60px] mt-5 '  variant="contained">Place Order</ColorButton>
+                  <ColorButton className='w-[250px] h-[60px] mt-5 ' onClick={()=>submit()}  variant="contained">Place Order</ColorButton>
               </div>
           </Card>
         </div>

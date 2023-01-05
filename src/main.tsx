@@ -13,7 +13,6 @@ import Home from '../src/pages/Home'
 import Dashboard from './pages/Dashboard'
 import NotFound from './pages/error';
 import Register from './pages/register'
-
 import Report from './pages/report';
 import Tagging from './pages/tagging';
 

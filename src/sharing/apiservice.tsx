@@ -1,10 +1,11 @@
+import axios from 'axios';
 
-//const API_URL = 'https://localhost:5004';
-const API_URL = 'http://192.168.1.159:5029';
+const API_URL = 'https://localhost:5186';
+// const API_URL = 'http://192.168.1.159:5029';
 
-const axios = require('axios').default;
 
-class UserService {
+
+class ApiService {
 
 
   Getclient() {
@@ -20,4 +21,4 @@ class UserService {
 
   
 }
-export default new UserService();
+export default new ApiService();

@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import '../App.css'
 import {
     Navbar,
     MobileNav,
@@ -20,55 +21,27 @@ export default function register() {
     const navigate = useNavigate();
 
 
-    const [formValues, setFormValues] = useState({
-        name:{
-          value:'',
-          error:false,
-          errorMessage:'You must enter a name'
-        },
-        age:{
-          value:21,
-          error:false,
-          errorMessage:'You must enter an age'
-        },
-        likes:{
-          value:'',
-          error:false,
-          errorMessage:'You must enter your liked tech stacks'
-        },
-        jobTitle:{
-          value:'full-stack',
-          error:false,
-          errorMessage:'You must choose your job title'
-        }
-      })
-
-
-
-
-
-
-
 const  gotohome =()=>{
-
-    Swal.fire({
-        icon: 'warning',
-        title: 'Are you sure Register Warranty ',
-        confirmButtonText: 'Yes ',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-      }).then((res) => { if(res.isConfirmed){navigate(`/Dashboard/${sncode}`)}});
-
-
+    if(sncode == '' || sncode == undefined){
+        Swal.fire('error','กรุณาใส่ Sncode','error')
+    }else{
+        Swal.fire({
+            icon: 'warning',
+            title: 'Are you sure Register Warranty ',
+            confirmButtonText: 'Yes ',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+          }).then((res) => { if(res.isConfirmed){navigate(`/Dashboard/${sncode}`)}});
+    }
 }
 
     return (
         <div className=''>
-            <div className='p-10  bg-white shadow-xl  w-[1000px]  rounded-lg 'style={{ margin: '0px auto' }}>
+            <div className='p-10  bg-white shadow-xl  w-[1000px]  sm:w-auto lg:w-auto rounded-lg  'style={{ margin: '0px auto' }}>
                 <div className='w-[900px]  text-black' style={{ margin: '0 auto' }}>
 
-                    <Typography variant="h6" gutterBottom className='mt-5  mb-5 text-[30px] font-bold'>
+                    <Typography variant="h6" gutterBottom className='lg:mt-5  lg:mb-5 lg:text-[30px] sm:text-3xl  sm:m-0  font-bold'>
                         Register Warranty
                     </Typography>
                     <Grid container spacing={3}>
@@ -165,7 +138,7 @@ const  gotohome =()=>{
                    
                 </div>
 
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center ">
 
                      <button onClick={ ()=>{gotohome()} } className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                         OK
