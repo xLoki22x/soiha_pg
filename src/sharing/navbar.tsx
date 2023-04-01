@@ -54,12 +54,12 @@ export default function Navbarr() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a
-          href={`/Dashboard/${sncode}`}
+        <Link
+          to={`/Dashboard/${sncode}`}
           className="flex items-center p-2 duration-300  ease-out  hover:rounded-full hover:bg-blue-500 hover:text-white"
         >
           Home
-        </a>
+        </Link>
       </Typography>
       <Typography
         as="li"
@@ -67,12 +67,12 @@ export default function Navbarr() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a
-          href="/report"
+        <Link
+          to="/report"
           className="flex items-center p-2 duration-300  ease-out  hover:rounded-full hover:bg-blue-500 hover:text-white"
         >
           Report
-        </a>
+        </Link>
       </Typography>
       <Typography
         as="li"
@@ -80,12 +80,12 @@ export default function Navbarr() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a
-          href="/tagging"
+        <Link
+          to="/tagging"
           className="flex items-center p-2 duration-300  ease-out  hover:rounded-full hover:bg-blue-500 hover:text-white"
         >
           Tagging
-        </a>
+        </Link>
       </Typography>
       {/* <Typography
         as="li"
