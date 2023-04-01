@@ -6,18 +6,13 @@ module.exports = {
   ],
   theme: {
 
-    extend: {
-      dropShadow: {
-        '3xl': '0 35px 35px rgba(0, 0, 0, 0.25)',
-        '4xl': [
-          '0 35px 35px rgba(255, 225, 255, 255)',
-          '0 45px 65px rgba(255, 225, 255, 255)'
-        ]
-      },
+    fontFamily:{
+      sans: ['Prompt'],
+      serif: ['Prompt'],
+      display: ['Prompt'],
+      body: ['Prompt']
     },
-    fontFamily: {
-      display: ["Nunito", "sans-serif"],
-    },
+
   },
   plugins: [],
 }

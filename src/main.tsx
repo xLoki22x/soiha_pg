@@ -15,6 +15,9 @@ import NotFound from './pages/error';
 import Register from './pages/register'
 import Report from './pages/report';
 import Tagging from './pages/tagging';
+import Successorder from './pages/successorder';
+
+
 
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
@@ -27,6 +30,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <Route path="report" element={<Report />} />
         <Route path="register" element={<Register />} />
         <Route path="tagging" element={<Tagging />} />
+        <Route path="successorder" element={<Successorder />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
   

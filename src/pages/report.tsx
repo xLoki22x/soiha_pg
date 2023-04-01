@@ -2,7 +2,6 @@ import PropTypes from 'prop-types'
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/TextField';
-import { Routes, Route, Outlet } from 'react-router-dom';
 import Navbarr from '../sharing/navbar'
 import { Card, Progress } from '@material-tailwind/react';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
@@ -14,6 +13,7 @@ import { styled } from '@mui/material/styles';
 import { purple } from '@mui/material/colors';
 import Button, { ButtonProps } from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import { Outlet, Link, Routes, Route, useNavigate, Navigate } from "react-router-dom";
 
 const BootstrapButton = styled(Button)({
   boxShadow: 'none',
@@ -58,10 +58,19 @@ const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
     backgroundColor: purple[700],
   },
 }));
- 
 
-const submit = () =>{
 
+
+const report = () => {
+  const [age, setAge] = React.useState('');
+  let navigate = useNavigate();
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setAge(event.target.value as string);
+  };
+
+
+  const submit = () => {
     Swal.fire({
       icon: 'warning',
       title: 'Warning',
@@ -71,21 +80,16 @@ const submit = () =>{
       cancelButtonColor: 'red',
       confirmButtonText: 'i am sure',
       cancelButtonText: 'cancel'
+    }).then((res) => {
+      if(res.isConfirmed){
+        return navigate('/successorder');
+      }
     })
-
-}
-
+  }
 
 
-
-const report = () => {
-  const [age, setAge] = React.useState('');
-
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
-  };
   return (
-    <div  className='font-display'>
+    <div className='font-display'>
       <Navbarr></Navbarr>
 
       <div className='mt-5 ml-20 mr-20 mb-20 '>
@@ -95,7 +99,7 @@ const report = () => {
           <Card className='mt-5 lg:w-[650px] h-full  sm:w-auto shadow-2xl'>
 
             <div className='m-5 '>
-              <label className=' font-bold text-3xl text-black'>Address Details</label>
+              <label className=' font-bold text-2xl text-black'>Address Details</label>
 
               <div className='m-5 flex justify-between'>
                 <TextField label="Fiest Name" className='w-[300px]' id="outlined-size-small" size="small" />
@@ -113,7 +117,7 @@ const report = () => {
 
 
               <div className='m-5 flex justify-between'>
-                <TextField label="Road" id="outlined-size-small" size="small" className='w-full'  />
+                <TextField label="Road" id="outlined-size-small" size="small" className='w-full' />
               </div>
 
               <div className='m-5 flex justify-between'>
@@ -164,7 +168,7 @@ const report = () => {
                     value={age}
                     label="Age"
                     onChange={handleChange}>
-                      
+
                     <MenuItem value="">
                       <em>None</em>
                     </MenuItem>
@@ -183,15 +187,15 @@ const report = () => {
 
           <Card className='mt-5 lg:w-[450px] sm:w-auto text-black shadow-2xl'>
             <div className='m-5 '>
-              <label className=' font-bold text-3xl'>Your Order</label>
+              <label className=' font-bold text-2xl'>Your Order</label>
 
               <div className='flex mt-2 justify-between w-full lg:w-[300px] sm:w-[400px] '>
-                <h3 className=' text-red-500 ml-3 mr-3 text-[15px] ' style={{fontWeight:'bold'}}>Technical</h3>
+                <h3 className=' text-red-500 ml-3 mr-3 text-[15px] ' style={{ fontWeight: 'bold' }}>Technical</h3>
                 <div className='w-[250px] text-left'>
-                <p>มีอาการ เสียที่หม้อแปลง และฝาครอบไหม้เลยจำเป็นต้องเปลื่ยน</p>
+                  <p>มีอาการ เสียที่หม้อแปลง และฝาครอบไหม้เลยจำเป็นต้องเปลื่ยน</p>
                 </div>
               </div>
-              
+
               <div className='mt-2'>
                 <table className='w-[300px] text-center ' style={{ margin: '0 auto', fontSize: 15 }}>
                   <thead className='border-b-2  border-slate-700'>
@@ -216,7 +220,7 @@ const report = () => {
                       <td>ฝาครอบ</td>
                       <td>70 ฿</td>
                     </tr>
-     
+
                   </tbody>
 
                   <thead className='border-b-2  border-slate-700 '>
@@ -227,7 +231,7 @@ const report = () => {
                   </thead>
 
                   <thead >
-                    <tr className='flex mt-2  justify-between text-center text-[30px]'>
+                    <tr className='flex mt-2  justify-between text-center text-[25px]'>
                       <th>Total</th>
                       <th>1590 ฿</th>
                     </tr>
@@ -235,11 +239,12 @@ const report = () => {
                 </table>
               </div>
 
+
             </div>
 
-              <div className='w-[300px] ' style={{ margin: '20px auto' }}>
-                  <ColorButton className='w-[250px] h-[60px] mt-5 ' onClick={()=>submit()}  variant="contained">Place Order</ColorButton>
-              </div>
+            <div className='w-[300px] ' style={{ margin: '20px auto' }}>
+              <ColorButton className='w-[250px] h-[60px] mt-5 ' onClick={() => submit()} variant="contained">Place Order</ColorButton>
+            </div>
           </Card>
         </div>
       </div>

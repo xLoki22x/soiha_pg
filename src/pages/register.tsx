@@ -38,12 +38,13 @@ const  gotohome =()=>{
 
     return (
         <div className=''>
-            <div className='p-10  bg-white shadow-xl  w-[1000px]  sm:w-auto lg:w-auto rounded-lg  'style={{ margin: '0px auto' }}>
-                <div className='w-[900px]  text-black' style={{ margin: '0 auto' }}>
+            <div className='p-10 w-auto sm:w-auto flex lg:w-auto rounded-lg min-w-[320px] flex-col justify-center  min-h-screen 'style={{ margin: '0px auto' }}>
+                <div className='w-[900px] bg-slate-50 p-10 shadow-xl rounded-3xl text-black' style={{ margin: '0 auto' }}>
 
-                    <Typography variant="h6" gutterBottom className='lg:mt-5  lg:mb-5 lg:text-[30px] sm:text-3xl  sm:m-0  font-bold'>
+                    <h1   className='lg:mt-5  lg:mb-5 lg:text-[30px] sm:text-3xl  sm:m-0  font-bold'>
                         Register Warranty
-                    </Typography>
+                    </h1>
+
                     <Grid container spacing={3}>
                         <Grid item xs={12} sm={6}>
                             <TextField
@@ -83,7 +84,7 @@ const  gotohome =()=>{
                             <TextField
                                 id="address2"
                                 name="address2"
-                                label="address"
+                                label="Address"
                                 fullWidth
                                 autoComplete="shipping address-line2"
                                 variant="standard"
@@ -136,8 +137,6 @@ const  gotohome =()=>{
                         </Grid>
                     </Grid>
                    
-                </div>
-
                 <div className="flex items-center justify-center ">
 
                      <button onClick={ ()=>{gotohome()} } className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
@@ -148,6 +147,8 @@ const  gotohome =()=>{
                         Back
                     </button></Link>
                 </div>
+                </div>
+
             </div>
             </div>
     )

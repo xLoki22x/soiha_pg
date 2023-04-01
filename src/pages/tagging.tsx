@@ -9,7 +9,7 @@ const tagging = () => {
 
     useEffect(() => {
 
-        setbarprogrss(0)
+        setbarprogrss(100)
 
     }, [])
 
@@ -63,7 +63,7 @@ const tagging = () => {
                             } else if (barprogrssode == 100) {
                                 return (
 
-                                    <p className=' text-3xl text-lime-400'>ส่ง</p>
+                                    <p className=' text-3xl text-lime-400'>ส่งสินค้า</p>
                                 )
                             }
                         })()}
@@ -72,47 +72,49 @@ const tagging = () => {
                 </div>
 
                 <div className='ml-20 mr-20 bg-white text-slate-800 flex rounded-b-3xl h-[150px]  border-t-2'>
-                    <div className='flex-col'>
-                        <div className='ml-10 mt-3 text-left'>
+                    <div className='w-[100%]'>
+                        <div className='ml-10 mr-10 mt-3 text-left'>
                             <p className=' font-bold'>Preparing tp ship on {new Date().toLocaleString('en-US', {
                                 year: 'numeric',
                                 month: 'long',
                                 day: 'numeric',
                             })} </p>
                         </div>
-
-                        <div className="mt-5 mb-1 lg:w-[1000px] sm:w-[500px]  flex justify-between ml-20 mr-20">
-                            {/* <p>Send for repair</p>
+                        <div className='ml-10 mr-10'>
+                            <div className="mt-5 mb-1 lg:w-[100%] sm:w-[100%]  flex justify-between ">
+                                {/* <p>Send for repair</p>
                       <p>Examine</p>
                       <p>Repair</p>
                       <p>Return Product</p>
                       <p>Successful delivery</p> */}
 
-                            <p >เช็ค</p>
-                            <p>ซ่อม</p>
-                            <p>ส่ง</p>
+                                <p >เช็ค</p>
+                                <p>ซ่อม</p>
+                                <p>ส่งสินค้า</p>
+                            </div>
+
+                            <div className='lg:w-[100%] sm:w-[100%]   bg-slate-200 rounded-full h-2.5'>
+
+                                {(() => {
+                                    if (barprogrssode == 0) {
+                                        return (
+                                            <div className="bg-blue-600 h-2.5 w-[2%] rounded-full" ></div>
+                                        )
+                                    } else if (barprogrssode == 50) {
+                                        return (
+                                            <div className="bg-blue-600 h-2.5 w-[50%] rounded-full" ></div>
+                                        )
+                                    } else if (barprogrssode == 100) {
+                                        return (
+                                            <div className="bg-blue-600 h-2.5 w-[100%] rounded-full" ></div>
+                                        )
+                                    }
+                                })()}
+
+
+                            </div>
                         </div>
 
-                        <div className='lg:w-[1000px] sm:w-[500px]  ml-20 bg-slate-200 rounded-full h-2.5'>
-
-                            {(() => {
-                                if (barprogrssode == 0) {
-                                    return (
-                                        <div className="bg-blue-600 h-2.5 w-[2%] rounded-full" ></div>
-                                    )
-                                } else if (barprogrssode == 50) {
-                                    return (
-                                        <div className="bg-blue-600 h-2.5 w-[50%] rounded-full" ></div>
-                                    )
-                                } else if (barprogrssode == 100) {
-                                    return (
-                                        <div className="bg-blue-600 h-2.5 w-[100%] rounded-full" ></div>
-                                    )
-                                }
-                            })()}
-
-
-                        </div>
                         <div className='mt-5'>
                         </div>
                     </div>

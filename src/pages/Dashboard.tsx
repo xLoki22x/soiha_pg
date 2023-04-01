@@ -63,6 +63,7 @@ export const Dashboard = () => {
                                     day: 'numeric',
                                 })}</span>
                             </div>
+
                             <div>
                                 <p className='text-red-400  font-bold sm:text-sm lg:text-lg md:text-base'> End Warranty </p>
                                 <span className='text-black '> {months.toLocaleString('en-US', {
@@ -70,6 +71,7 @@ export const Dashboard = () => {
                                     month: 'long',
                                     day: 'numeric',
                                 })}</span>
+
                             </div>
                             {/* <p className='text-red-400 text-left mr-5 font-bold sm:text-sm lg:text-lg md:text-base'> End Warranty {months.toDateString()}</p> */}
                         </div>

@@ -21,7 +21,7 @@ const Home = () => {
 
             setSNcode(e.target.value);
             console.log(sncode);
-            
+
         }
     }
 
@@ -29,9 +29,10 @@ const Home = () => {
         if (sncode == '' || !sncode == undefined) {
             Swal.fire({
                 icon: 'error',
-                title: 'please enter SNcode',
-                text: 'Please enter your SNcode!!!',
+                title: 'Please Enter SNcode',
+                text: 'Please Enter your SNcode!!!',
                 confirmButtonText: 'OK',
+
             })
         } else {
             console.log('pass');
@@ -46,7 +47,9 @@ const Home = () => {
                 cancelButtonText: 'cancel'
             }).then((res) => {
                 if (res.isConfirmed) {
+
                     return navigate(`Dashboard/${sncode}`)
+
                 }
             })
         }
@@ -59,11 +62,11 @@ const Home = () => {
                 <h1 className='text-violet-700  '> SOIHA WARRANTY </h1>
                 <div className='flex' >
                     <div>
-                    <input style={{ textTransform: "uppercase" }} className='rounded-full ml-20 focus:outline-none bg-white text-black shadow-xl mt-5 w-96 h-12 text-center' placeholder='Enter Code Warranty' onChange={getsncode} type={'text'} value={sncode} ></input>
+                        <input style={{ textTransform: "uppercase" }} className='rounded-full ml-20 focus:outline-none bg-white text-black shadow-xl mt-5 w-96 h-12 text-center' placeholder='Enter Code Warranty' onChange={getsncode} type={'text'} value={sncode} ></input>
                     </div>
                     <div className='pt-5'>
-                    <button type='submit' className='bg-violet-700 text-slate-100 hover:bg-slate-100 hover:text-violet-700 ml-3 btn btn-primary' onClick={handleClick}>submit</button>
-                    {/* <button className='ml-3' onClick={()=>handleClick()}>
+                        <button type='submit' className='bg-violet-700 text-slate-100 hover:bg-slate-50 transition ease-in hover:scale-110 hover:text-violet-700 ml-3 btn btn-primary border-none  hover:border-solid hover:border-2 border-sky-500 ' onClick={handleClick}>SUBMIT</button>
+                        {/* <button className='ml-3' onClick={()=>handleClick()}>
                         <div className="svg-wrapper-1">
                             <div className="svg-wrapper">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
@@ -77,7 +80,7 @@ const Home = () => {
                     </div>
                     {/* <Link to={`Dashboard/${sncode}`} ><button type='submit' className='bg-violet-700 text-slate-100 hover:bg-slate-100 hover:text-violet-700 ml-3 btn btn-primary'>submit</button></Link> */}
                 </div>
-               <p className='mt-2' >  <Link to='register'className=' text-slate-400 mt-3 underline hover:text-black'> Register Guarantee</Link></p>
+                <p className='mt-2 ' >  <Link to='register' className=' text-slate-400 mt-3 underline hover:text-black '> Register Guarantee</Link></p>
             </div>
             <Outlet />
         </div>

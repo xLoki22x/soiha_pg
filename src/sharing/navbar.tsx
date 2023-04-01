@@ -27,8 +27,8 @@ export default function Navbarr() {
   const gotoback = (event: any) => {
     Swal.fire({
       icon: "warning",
-      title: "Are you sure you want to exit",
-      text: "your ready ",
+      title: "Are you sure you want to Exit",
+      text: "Your Ready ",
       confirmButtonText: "OK",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -87,7 +87,7 @@ export default function Navbarr() {
           Tagging
         </a>
       </Typography>
-      <Typography
+      {/* <Typography
         as="li"
         variant="small"
         color="blue-gray"
@@ -99,7 +99,7 @@ export default function Navbarr() {
         >
           About AS
         </a>
-      </Typography>
+      </Typography> */}
     </ul>
   );
 
@@ -123,7 +123,7 @@ export default function Navbarr() {
           variant="gradient"
           onClick={gotoback}
           size="sm"
-          className="hidden border-red-600 text-red-500 hover:border-red-600 hover:bg-red-600 hover:text-teal-50 lg:inline-block"
+          className="hidden border-red-600 text-red-500 transition hover:scale-125  ease-in-out  hover:border-red-600 hover:bg-red-600  hover:text-teal-50 lg:inline-block"
         >
           Leave
         </Button>
@@ -176,7 +176,7 @@ export default function Navbarr() {
           size="sm"
           fullWidth
           onClick={gotoback}
-          className="mb-2  border-red-600 text-red-500 hover:border-red-600 hover:bg-red-600 hover:text-teal-50"
+          className="mb-2  border-red-600 text-red-500 hover:border-red-600 hover:bg-red-600 hover:text-teal-50 text-center"
         >
           <span>Leave</span>
         </Button>
