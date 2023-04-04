@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
-import Box from '@mui/material/TextField';
+import Box from '@mui/material/Box';
 import Navbarr from '../sharing/navbar'
 import { Card, Progress } from '@material-tailwind/react';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
@@ -81,7 +81,7 @@ const report = () => {
       confirmButtonText: 'i am sure',
       cancelButtonText: 'cancel'
     }).then((res) => {
-      if(res.isConfirmed){
+      if (res.isConfirmed) {
         return navigate('/successorder');
       }
     })
@@ -98,89 +98,88 @@ const report = () => {
         <div className='flex lg:justify-around sm:flex sm:flex-col lg:flex-row'>
           <Card className='mt-5 lg:w-[650px] h-full  sm:w-auto shadow-2xl'>
 
-            <div className='m-5 '>
-              <label className=' font-bold text-2xl text-black'>Address Details</label>
+            <div className='m-10 mb-[50px] '>
+              <label className=' font-bold text-2xl text-black '>Address Details</label>
 
-              <div className='m-5 flex justify-between'>
-                <TextField label="Fiest Name" className='w-[300px]' id="outlined-size-small" size="small" />
-                <TextField label="Last name" className='w-[350px]' id="outlined-size-small" size="small" />
-              </div>
+              <Box component="form" sx={{ '& .MuiTextField-root': { m: 1, width: '250px', lineHeight: '29xp' }, }} noValidate autoComplete="off">
+                <div className="">
+                  <TextField id="standard-basic" label="Name" variant="standard" />
+                  <TextField id="standard-basic" label="Lastname" variant="standard" />
+                </div>
+              </Box>
+
+              <Box component="form" sx={{ '& .MuiTextField-root': { m: 1, width: '515px', lineHeight: '29xp' }, }} noValidate autoComplete="off">
+                <div className="">
+                  <TextField id="standard-basic" label="Addess" variant="standard" />
+                </div>
+              </Box>
+
+              <Box component="form" sx={{ '& .MuiTextField-root': { m: 1, width: '515px', lineHeight: '29xp' }, }} noValidate autoComplete="off">
+                <div className="">
+                  <FormControl variant="standard" sx={{ m: 1, minWidth: 515 }}>
+                    <InputLabel id="demo-simple-select-label">Province</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-standard-label"
+                      id="demo-simple-select-standard"
+                      value={age}
+                      label="Province"
+                      onChange={handleChange}>
+                      <MenuItem value={10}>Ten</MenuItem>
+                      <MenuItem value={20}>Twenty</MenuItem>
+                      <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+                  </FormControl>
+                </div>
+              </Box>
+
+              <Box component="form" sx={{ '& .MuiTextField-root': { m: 1, width: '250px', lineHeight: '29xp' }, }} noValidate autoComplete="off">
+                <div className="">
+                  <FormControl variant="standard" sx={{ m: 1, minWidth: 250 }}>
+                    <InputLabel id="demo-simple-select-label">Amphoe</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-standard-label"
+                      id="demo-simple-select-standard"
+                      value={age}
+                      label="Amphoe"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={10}>Ten</MenuItem>
+                      <MenuItem value={20}>Twenty</MenuItem>
+                      <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+                  </FormControl>
+                  <FormControl variant="standard" sx={{ m: 1, minWidth: 250 }}>
+                    <InputLabel id="demo-simple-select-label">Tambon</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-standard-label"
+                      id="demo-simple-select-standard"
+                      value={age}
+                      label="Tambon"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={10}>Ten</MenuItem>
+                      <MenuItem value={20}>Twenty</MenuItem>
+                      <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+                  </FormControl>
+                </div>
+              </Box>
 
 
-              <div className='m-5 flex justify-between'>
-                <TextField className='w-full' label="Email" id="outlined-size-small" size="small" />
-              </div>
+              <Box component="form" sx={{ '& .MuiTextField-root': { m: 1, width: '515px', lineHeight: '29xp' }, }} noValidate autoComplete="off">
+                <div className="">
+                  <TextField id="standard-basic" label="Postcode" variant="standard" />
+                </div>
+              </Box>
 
-              <div className='m-5 flex justify-between'>
-                <TextField className='w-full' label="Address" id="outlined-size-small" size="small" />
-              </div>
+              <Box component="form" sx={{ '& .MuiTextField-root': { m: 1, width: '515px', lineHeight: '29xp' }, }} noValidate autoComplete="off">
+                <div className="">
+                  <TextField id="standard-basic" label="Phone Number" variant="standard" />
+                </div>
+              </Box>
 
 
-              <div className='m-5 flex justify-between'>
-                <TextField label="Road" id="outlined-size-small" size="small" className='w-full' />
-              </div>
 
-              <div className='m-5 flex justify-between'>
-                <FormControl className='w-full' size="small">
-                  <InputLabel id="demo-simple-select-label">Town/City</InputLabel>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={age}
-                    label="Town/City"
-                    onChange={handleChange}
-                  >
-                    <MenuItem value="">
-                      <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                  </Select>
-                </FormControl>
-              </div>
-
-              <div className='m-5 flex justify-between'>
-
-                <FormControl sx={{ minWidth: 200 }} size="small" className='w-full' >
-                  <InputLabel id="demo-simple-select-label">County</InputLabel>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={age}
-                    label="Age"
-                    onChange={handleChange}
-                  >
-                    <MenuItem value="">
-                      <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                  </Select>
-                </FormControl>
-
-                <FormControl sx={{ minWidth: 200 }} size="small" className='w-full' >
-                  <InputLabel id="demo-simple-select-label">County</InputLabel>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={age}
-                    label="Age"
-                    onChange={handleChange}>
-
-                    <MenuItem value="">
-                      <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                  </Select>
-                </FormControl>
-              </div>
-              <div className='m-5 flex justify-between'>
-                <TextField label="Zipcode/Postal" id="outlined-size-small" size="small" className='w-full' />
-              </div>
             </div>
           </Card>
 

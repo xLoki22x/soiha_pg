@@ -31,9 +31,9 @@ export const Dashboard = () => {
     return (
         <div className='font-display'>
             <Navbarr></Navbarr>
-            <div className='text-center  m-auto  mt-10 '>
+            <div className='text-center h-[100hv] mt-[7%] '>
                 <h1 className=' text-black '>SN : {id?.toUpperCase()}</h1>
-                <div className="flex font-sans sm:m-5 lg:ml-[15%] flex-auto col-auto items-center  ">
+                <div className="flex font-sans flex-auto col-auto items-center justify-center ">
 
                     <div className='overflow-hidden group'>
                         <img src={imgback3} className="  inset-2  lg:w-[350px] lg:h-[350px] sm:w-[300px] sm:h-[300px] object-cover rounded-lg  transition duration-300 group-hover:scale-110 " loading="lazy" />
